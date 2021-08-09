@@ -4,8 +4,10 @@ const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile)
 
-// TODO: Create an array of questions for user input
-const questions = [
+inquirer;
+const promptUser = () => {
+  return inquirer
+    .prompt([
     {
         type: "input",
         message:
@@ -52,7 +54,10 @@ const questions = [
         message: "How can the user run tests for your project?",
         name: "tests",
       }]
-
+      .then(function(answers){
+          return answers;
+      });
+    };
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
