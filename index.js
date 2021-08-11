@@ -1,77 +1,80 @@
-// packages needed for this application
-const inquirer = require("inquirer");
-const fs = require("fs");
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile)
+// included packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-inquirer;
-const promptUser = () => {
-  return inquirer
-    .prompt([
+// array of questions for user input
+const questions = [
     {
-        type: "input",
-        message:
-          "Please enter your GitHub username",
-        name: "username",
-      },
-      {
-        type: "input",
-        message: "What is your Repo/Project's Name?",
-        name: "projectName",
-      },
-      {
-        type: "input",
-        message:
-          "Provide a description of the project",
-        name: "description",
-      },
-      {
-        type: "list",
-        message: "What kind of license do you want for the project?",
-        name: "license",
-        choices: ["MIT", "Gpl-3.0", "Unlicense", "Apache-2.0", "None"],
-      },
-      {
-        type: "input",
-        message:
-          "What do you want to include in the Usage Section of your project?",
-        name: "usage",
-      },
-      {
-        type: "input",
-        message:
-          "Installation instructions for your project:",
-        name: "install",
-      },
-      {
-        type: "input",
-        message:
-          "What do you want the user to know about contributing to your poject?",
-        name: "contributing",
-      },
-      {
-        type: "input",
-        message: "How can the user run tests for your project?",
-        name: "tests",
-      }]
-      .then(function(answers){
-          return answers;
-      });
-    };
-    // function to init script and write README.md file 
-    async function init() {
-        try {
-          const answers = await promptUser();
-          githubAPI.Data(answers.username).then(async (github) => {
-            const ghLicense = await githubAPI.License(answers.license);
-            const readMe = generateReadme(answers, github);
-            await writeFileAsync("README.md", readMe);
-            await writeFileAsync("License.txt", ghLicense);
-            console.log("Created README!");
-          });
-        } catch (err) {
-          console.log(err);
+        type: 'input',
+        name: 'title',
+        message: 'What is title of your projec? ',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Enter your project description ',
+    },
+    {
+        type: 'input',
+        name: 'installInstructions',
+        message: 'Enter the installation instructions ',
+    },
+    {
+        type: 'input',
+        name: 'appUsage',
+        message: 'Enter the usage information ',
+    },
+    {
+        type: 'input',
+        name: 'howToContribute',
+        message: 'Enter the contribution guidelines ',
+    },
+    {
+        type: 'input',
+        name: 'testInstructions',
+        message: 'Enter the test instructions ',
+    },
+    {
+        type: 'list',
+        message: 'Choose a license type for the application ',
+        name: 'licenseType',
+        choices: ['MIT', 'Apache 2.0', 'MPL 2.0'],
+    },
+    {
+        type: 'input',
+        name: 'gitHubUser',
+        message: 'What is your GitHub username? ',
+    },
+    {
+        type: 'input',
+        name: 'userEmail',
+        message: 'What is your email address? ',
+        validate: function (email) {
+            // Regex mail check (return true if valid mail)
+            const isValid = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            return isValid ? true : "Enter a valid email address";
         }
-      }
+    }
+];
+
+// Function to write README file
+function writeToFile(fileName, data) { 
+    const content = generateMarkdown(data);
+    fs.writeFile(fileName, content, (err) =>
+        err ? console.log(err) : console.log('Success!')
+    );
+}
+
+// Function to initialize app
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((data) => {
+            const filename = `README.md`;
+            writeToFile(filename, data);
+        });
+}
+
 // Function call to initialize app
 init();
