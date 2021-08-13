@@ -56,8 +56,8 @@ function generateMarkdown(data) {
   ## Questions?
   GitHub [${data.gitHubUser}](https://github.com/${data.gitHubUser})
   How to reach me with additional questions ? - [${data.userEmail}](mailto://${data.userEmail})
-`
-;
+
+  _This README was generated with ❤️ using the Markdown CLI Generator by MichaelAdamGroberman (https://github.com/MichaelAdamGroberman/GitHub-Repo-CLI-Markdown-Generator-) 🔥_ `;
 
   return content;
 }
