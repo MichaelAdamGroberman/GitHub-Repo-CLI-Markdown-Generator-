@@ -1,19 +1,19 @@
 
-  # test  
+  # Sample Test Project  
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
   ## Description
-  test
+  A project description is required! This is a sample description....
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
   ## Installation
-  test
+  To install this project ......
   
   ## Usage
   '''bash
-    test
+    To use this project .....
   '''
   
   ## License
@@ -21,11 +21,11 @@
   Licensed under the [MIT](https://opensource.org/licenses/MIT) license. 
   
   ## How to Contribute
-  test
+  You are welcome to contribute by forking my repo
   ## Tests  
-  test
+  There are currently no test instructions
   ## Questions?
   GitHub [MichaelAdamGroberman](https://github.com/MichaelAdamGroberman)
   How to reach me with additional questions ? - [michael.groberman@me.com](mailto://michael.groberman@me.com)
 
-  _This README was generated with by [GitHub Repo - CLI Markdown Generator](https://github.com/MichaelAdamGroberman/GitHub-Repo-CLI-Markdown-Generator-) _  
+  _This README was generated with ❤️ using the Markdown CLI Generator by MichaelAdamGroberman (https://github.com/MichaelAdamGroberman/GitHub-Repo-CLI-Markdown-Generator-) 🔥_ 
