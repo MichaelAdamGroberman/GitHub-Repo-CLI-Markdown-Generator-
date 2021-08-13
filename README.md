@@ -9,6 +9,7 @@
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
+  
   ## Installation
   First you must be sure to install [NodeJS](https://nodejs.org/en/) on the computer you with to run this package on.
   Once you have Node.js installed on the machine of your choice, you can then Clone this repo. Once you've successfully downloaded the gothub repo clone, open your terminal, or command prompt, and change directory to cloned repo folder. You can do this by opening your command line interface and typing 'cd /example/path/to/cloned/repo'. You must then run 'npm install' in the command line to install the required dependencies. 
