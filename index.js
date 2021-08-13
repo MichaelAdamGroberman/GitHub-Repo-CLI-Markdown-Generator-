@@ -9,21 +9,50 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is title of your projec? ',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+                } else {
+                console.log('You need to enter a title to continue!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'description',
         message: 'Enter your project description ',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'installInstructions',
         message: 'Enter the installation instructions ',
+        validate: installInstructionsInput => {
+            if (installInstructionsInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'appUsage',
         message: 'Enter the usage information ',
+        validate: appUsageInput => {
+            if (appUsageInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -39,12 +68,26 @@ const questions = [
         type: 'list',
         message: 'Choose a license type for the application ',
         name: 'licenseType',
-        choices: ['MIT', 'Apache 2.0', 'MPL 2.0'],
+        choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
+        validate: licenseTypeInput => {
+            if (licenseTypeInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'gitHubUser',
         message: 'What is your GitHub username? ',
+        validate: gitHubUserInput => {
+            if (gitHubUserInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
