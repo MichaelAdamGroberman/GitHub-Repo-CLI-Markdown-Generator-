@@ -8,7 +8,7 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is title of your projec? ',
+        message: 'What is title of your project? ',
         validate: titleInput => {
             if (titleInput) {
                 return true;
@@ -26,6 +26,7 @@ const questions = [
             if (descriptionInput) {
                 return true;
             } else {
+                console.log('You need to enter a project description.')
                 return false;
             }
         }
@@ -38,6 +39,7 @@ const questions = [
             if (installInstructionsInput) {
                 return true;
             } else {
+                console.log('You need to include install instructions.')
                 return false;
             }
         }
@@ -50,6 +52,7 @@ const questions = [
             if (appUsageInput) {
                 return true;
             } else {
+                console.log('You need to include usage information.')
                 return false;
             }
         }
@@ -85,6 +88,7 @@ const questions = [
             if (gitHubUserInput) {
                 return true;
             } else {
+                console.log('Valid GitHub Username is required!')
                 return false;
             }
         }
@@ -96,7 +100,7 @@ const questions = [
         validate: function (email) {
             // Regex mail check (return true if valid mail)
             const isValid = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-            return isValid ? true : "Enter a valid email address";
+            return isValid ? true : "A valid email address is required!";
         }
     }
 ];
