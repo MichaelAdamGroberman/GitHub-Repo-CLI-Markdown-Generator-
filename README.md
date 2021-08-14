@@ -17,7 +17,7 @@
   ## Usage
   Once the app is set up, while within the same directory in your command line terminal, run 'node index.js' to run the application. You will then be prompted to                 answer a series of questions to generate your README.md file. Some questions are required, while others are optional. 
   
-  ![Video Tutorial](https://github.com/MichaelAdamGroberman/GitHub-Repo-CLI-Markdown-Generator-/raw/main/assets/CLI-Readme_Generator.mov)
+  ![Video Tutorial](https://github.com/MichaelAdamGroberman/GitHub-Repo-CLI-Markdown-Generator-/blob/main/assets/CLI-Readme_Generator.mov)
 
   
   ## License
